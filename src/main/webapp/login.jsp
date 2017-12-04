@@ -4,20 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>UpdateEmp</title>
+<title>登录页面</title>
 </head>
 <body>
 	<div align="center">
-		<form action="servlet/updateEmp" method="post">
+		<form action="servlet/login" method="post">
 			<table>
 				<tr>
-					<td>请输入新的empno：<input type="text" name="empno"></td>
-				</tr> 
+					<td>用户名：<input type="text" name="username"></td>
+				</tr>
 				<tr>
-					<td>请输入新的ename：<input type="text" name="ename"></td>
+					<td>&nbsp&nbsp&nbsp密码：<input type="text" name="password"></td>
 				</tr>
 			</table>
-			<input type="submit" name="submit" value="UpdateEmp!">
+			<input type="submit" value="LoginSystem!">
 		</form>
 	</div>
 </body>

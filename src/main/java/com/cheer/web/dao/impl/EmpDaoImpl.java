@@ -99,8 +99,25 @@ public class EmpDaoImpl implements EmpDao
     @Override
     public void update(Emp emp)
     {
-        // TODO Auto-generated method stub
-
+        Connection conn = DbHelper.getInstance().getConnection();
+        String sql = "UPDATE emp SET ename = ? WHERE empno = ?";
+        PreparedStatement ps = null;
+        try
+        {
+            ps=conn.prepareStatement(sql);
+            ps.setString(1, emp.getEname());
+            ps.setInt(2, emp.getEmpno());
+            ps.executeUpdate();
+        }
+        catch (SQLException e)
+        {
+            LOGGER.catching(e);
+        }
+        finally
+        {
+            DbHelper.closeStatement(ps);
+        }
+        
     }
 
     @Override
