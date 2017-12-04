@@ -22,6 +22,7 @@ import com.cheer.web.domain.Emp;
 import com.cheer.web.util.DbHelper;
 import com.cheer.web.util.Page;
 
+
 public class EmpDaoImpl implements EmpDao
 {
     private static final Logger LOGGER = LogManager.getLogger(EmpDaoImpl.class);
@@ -36,7 +37,25 @@ public class EmpDaoImpl implements EmpDao
     @Override
     public void save(Emp emp)
     {
+        Connection conn = DbHelper.getInstance().getConnection();
 
+        PreparedStatement ps = null;
+        try
+        {
+            String sql = "INSERT INTO emp(empno, ename) values(?, ?)";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, emp.getEmpno());
+            ps.setString(2, emp.getEname());
+            ps.executeUpdate();
+        }
+        catch (SQLException e)
+        {
+            LOGGER.catching(e);
+        }
+        finally
+        {
+            DbHelper.closeStatement(ps);
+        }
     }
 
     @Override

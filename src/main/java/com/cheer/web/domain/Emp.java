@@ -32,6 +32,12 @@ public class Emp
 
     }
 
+    public Emp(Integer empno, String ename)
+    {
+        super();
+        this.empno = empno;
+        this.ename = ename;
+    }
     public Emp(Integer empno, String ename, String job, Date hiredate, Double sal)
     {
         super();

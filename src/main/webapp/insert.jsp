@@ -8,17 +8,18 @@
 </head>
 <body>
 	<div align="center">
-		<form action="" method="post">
+		<form action="servlet/insertEmp" method="post">
 			<table>
 				<tr>
 					<td>empno:<input type="text" name="empno" ><td>			
-				<tr>
+				</tr>
 				<tr>
 					<td>ename:<input type="text" name="ename" ><td>
 				</tr>
 			</table>
+			<input type="submit" name="submit" value="InsertIntoEmp!">
 		</form>
-	<input type="submit" name="submit" value="InsertIntoEmp!">
+	
 	</div>
 </body>
 </html>

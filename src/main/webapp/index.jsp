@@ -44,7 +44,7 @@
 		
 	</table><br>
 	<div align="center">
-		<a href="/servlet/insertEmp?empno<%=new Emp().getEmpno()%>">insertInto</a>
+		<a href="insert.jsp">InsertInto</a>
 	</div>
 	
 </body>
